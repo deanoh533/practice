@@ -1,6 +1,5 @@
-package com.codestates.homework;
+package com.codestates.helper;
 
-import com.codestates.helper.StampCalculator;
 import com.codestates.order.entity.Order;
 import com.codestates.order.entity.OrderCoffee;
 import org.junit.jupiter.api.DisplayName;
@@ -8,22 +7,15 @@ import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
-public class StampCalculatorTest {
+public class StampCalculatorTestJUnit {
+    @DisplayName("StampCalculatorTestJUnit() Test")
     @Test
-    @DisplayName("실습1: 스탬프 카운트 계산 단위 테스트")
-    public void calculateStampCountTest() {
-        calculateStampCount();
+    public void stampCalculatorTestWithoutJUnit() {
+        calculateStampCountTest();
+        calculateEarnedStampCountTest();
     }
 
-    @Test
-    @DisplayName("실습1: 주문 후 누적 스탬프 카운트 계산 탄위 테스트")
-    public void calculateEarnedStampCountTest(){
-        calculateEarnedStampCount();
-    }
-
-    private static void calculateStampCount() {
+    private static void calculateStampCountTest() {
         // given
         int nowCount = 5;
         int earned = 3;
@@ -35,10 +27,10 @@ public class StampCalculatorTest {
         int expected = 7;
 
         // then
-        assertEquals(expected, actual);
+        System.out.println(expected == actual);
     }
 
-    private static void calculateEarnedStampCount() {
+    private static void calculateEarnedStampCountTest() {
         // given
         Order order = new Order();
         OrderCoffee orderCoffee1 = new OrderCoffee();
@@ -56,6 +48,6 @@ public class StampCalculatorTest {
 
 
         // then
-        assertEquals(expected, actual);
+        System.out.println(expected == actual);
     }
 }
